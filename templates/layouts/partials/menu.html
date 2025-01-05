@@ -1,0 +1,15 @@
+{% load static %}
+<nav class="navbar">
+    <div class="navbar-logo">
+        <img src="{% static 'img/logo.png' %}" alt="Logo" width="74px" />
+    </div>
+    <ul class="navbar-links">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'portfolio' %}">Portafolio</a></li>
+    </ul>
+    <div class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>

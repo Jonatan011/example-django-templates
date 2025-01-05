@@ -1,0 +1,325 @@
+/* Variables de colores */
+:root {
+    --color-primario: #da4d2d;
+    /* Naranja */
+    --color-secundario: #C70039;
+    /* Rojo */
+    --color-texto-terciario: #bbb4b3;
+    /* Blanco */
+    --color-texto: #FFFFFF;
+    /* Blanco */
+    --color-texto-general: #1C1C1C;
+    /* Blanco */
+    --color-fondo: #4e4949;
+    /* Negro oscuro */
+    --footer-bg: #1c1c1c;
+    /* Fondo oscuro */
+    --footer-text: #ffffff;
+    /* Texto blanco */
+    --footer-link: #ff5733;
+    /* Naranja */
+    --footer-link-hover: #c70039;
+    /* Rojo */
+    --footer-border: rgba(255, 255, 255, 0.2);
+    /* Borde translúcido */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--color-primario);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo img {
+    height: auto;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-links li a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    color: var(--color-secundario);
+}
+
+/* Botón de menú hamburguesa */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto);
+    border-radius: 5px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--color-primario);
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+
+
+/* Footer */
+footer {
+    width: 100vw;
+    min-height: 150px;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--footer-border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer img {
+    margin-bottom: 1rem;
+    display: block;
+    width: 128px;
+    height: auto;
+}
+
+footer a {
+    color: var(--footer-link);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--footer-link-hover);
+}
+
+footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+main {
+    background-color: var(--color-texto-terciario);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-texto-general);
+}
+
+/* Sección de portafolio */
+.portfolio {
+    padding: 3rem 1.5rem;
+    min-width: 40%;
+    min-height: 60px;
+    text-align: center;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.portfolio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-texto-terciario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sección Acerca de */
+.about-section {
+    padding: 3rem 1.5rem;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about img {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+    max-width: 500px;
+    text-align: left;
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-texto-terciario);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about img {
+        margin-bottom: 1rem;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+}
+
+.photos {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    /* Espaciado entre imágenes */
+    width: 100%;
+    max-width: 800px;
+}
+
+.photos img {
+    width: calc(33.333% - 1rem);
+    /* 3 imágenes por fila */
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .about-content {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .photos img {
+        width: calc(50% - 1rem);
+        /* 2 imágenes por fila en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .photos img {
+        width: calc(100% - 1rem);
+        /* 1 imagen por fila en pantallas muy pequeñas */
+    }
+}
